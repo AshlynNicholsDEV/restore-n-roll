@@ -172,7 +172,7 @@
             Wallpaper
           </button>
         </div>
-        <div class="gallery-grid">
+        <div class="gallery-grid" id="gallery-photos">
           <figure data-category="exterior">
             <button
               class="photo"
@@ -540,6 +540,17 @@
               <p>WALLPAPER · SAMPLE ILLUSTRATION</p>
             </figcaption>
           </figure>
+        </div>
+              <div class="gallery-mobile-controls">
+          <p id="gallery-count" class="form-note" aria-live="polite"></p>
+          <button
+            id="gallery-toggle"
+            class="button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="gallery-photos"
+            hidden
+          >Show all photos</button>
         </div>
       </section>
       <section

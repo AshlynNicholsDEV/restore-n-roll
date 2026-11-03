@@ -22,11 +22,8 @@ document.querySelectorAll('[data-filter]').forEach(button => {
       b.setAttribute('aria-pressed', String(b === button));
     });
 
-    document.querySelectorAll('[data-category]').forEach(card => {
-      card.hidden =
-        button.dataset.filter !== 'all' &&
-        card.dataset.category !== button.dataset.filter;
-    });
+    galleryExpanded = false;
+    updateGalleryPreview();
   });
 });
 
@@ -131,3 +128,49 @@ function initializeGalleryFade() {
 }
 
 initializeGalleryFade();
+
+// Compact gallery preview on mobile, including when a category is selected.
+const mobileGallery = window.matchMedia('(max-width: 700px)');
+const galleryToggle = document.querySelector('#gallery-toggle');
+const galleryCount = document.querySelector('#gallery-count');
+const galleryCards = Array.from(document.querySelectorAll('#gallery-photos > figure'));
+let galleryExpanded = false;
+
+function updateGalleryPreview() {
+  const selectedFilter = document.querySelector('[data-filter].active').dataset.filter;
+  const matchingCards = galleryCards.filter(card =>
+    selectedFilter === 'all' || card.dataset.category === selectedFilter
+  );
+  const limit = mobileGallery.matches && !galleryExpanded ? 2 : matchingCards.length;
+
+  galleryCards.forEach(card => {
+    const position = matchingCards.indexOf(card);
+    card.hidden = position < 0 || position >= limit;
+  });
+
+  galleryToggle.hidden = !mobileGallery.matches || matchingCards.length <= 2;
+  galleryToggle.setAttribute('aria-expanded', String(galleryExpanded));
+  galleryToggle.textContent = galleryExpanded
+    ? 'Show fewer photos'
+    : 'Show all ' + matchingCards.length + ' photos';
+  galleryCount.textContent = mobileGallery.matches
+    ? 'Showing ' + Math.min(limit, matchingCards.length) + ' of ' + matchingCards.length + ' photos'
+    : '';
+}
+
+galleryToggle.addEventListener('click', () => {
+  galleryExpanded = !galleryExpanded;
+  updateGalleryPreview();
+
+  if (!galleryExpanded) {
+    document.querySelector('#gallery').scrollIntoView({ block: 'start', behavior: 'instant' });
+    galleryToggle.focus({ preventScroll: true });
+  }
+});
+
+mobileGallery.addEventListener('change', () => {
+  galleryExpanded = false;
+  updateGalleryPreview();
+});
+
+updateGalleryPreview();
