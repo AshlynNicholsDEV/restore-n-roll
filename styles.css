@@ -1,11 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
 :root {
-  --navy: #202e48;
-  --ink: #252f3b;
-  --muted: #657078;
-  --paper: #f7f7f2;
-  --lime: #dde7a8;
-  --line: #daddd6;
+  /* Coastal neutrals, sea glass, and one warm action color. */
+  --charcoal: #173f43;
+  --ink: #203b3e;
+  --muted: #536b6a;
+  --paper: #faf9f5;
+  --sage: #c8ded4;
+  --cream: #f1eadd;
+  --peach: #f2b49c;
+  --coral: #bd4b35;
+  --coral-hover: #a43e2b;
+  --line: #d6dfda;
+  --sea-glass: #e2eee8;
+  --sand: #f1eadd;
+  --white: #ffffff;
 }
 
 * {
@@ -45,7 +53,7 @@ textarea {
 }
 
 :focus-visible {
-  outline: 3px solid #758a39;
+  outline: 3px solid #bd4b35;
   outline-offset: 5px;
 }
 
@@ -69,7 +77,7 @@ header {
 
 .brand-icon {
   font-size: 38px;
-  color: var(--navy);
+  color: var(--charcoal);
   position: relative;
 }
 
@@ -96,7 +104,7 @@ nav {
 }
 
 .nav-cta {
-  border: 1px solid var(--navy);
+  border: 1px solid var(--charcoal);
   padding: 13px 19px;
   border-radius: 3px;
 }
@@ -149,7 +157,7 @@ em {
 }
 
 h1 em {
-  color: #697b46;
+  color: #bd4b35;
 }
 
 .intro {
@@ -168,7 +176,7 @@ h1 em {
 }
 
 .button {
-  background: var(--navy);
+  background: var(--charcoal);
   color: white;
   padding: 18px 22px;
   border: 0;
@@ -181,12 +189,12 @@ h1 em {
 }
 
 .button:hover {
-  background: #344768;
+  background: #24565a;
 }
 
 .text-link {
   font-size: 12px;
-  border-bottom: 1px solid #a9b098;
+  border-bottom: 1px solid #668c80;
   padding-bottom: 5px;
 }
 
@@ -195,13 +203,13 @@ h1 em {
   gap: 24px;
   font-size: 11px;
   margin-top: 43px;
-  color: #59644f;
+  color: #536b6a;
 }
 
 .hero-image {
   position: relative;
   min-height: 450px;
-  background: #c8d1ce;
+  background: #e2eee8;
   border-radius: 120px 3px 3px 3px;
   overflow: hidden;
 }
@@ -220,7 +228,7 @@ h1 em {
   left: 27px;
   font-size: 10px;
   letter-spacing: 2px;
-  color: navy;
+  color: var(--charcoal);
   text-shadow: 1px 1px 0 white;
 }
 
@@ -282,7 +290,7 @@ h2 {
 
 .number {
   font-size: 11px;
-  color: #7b865e;
+  color: #536b6a;
   display: block;
   margin-bottom: 35px;
 }
@@ -303,7 +311,7 @@ h3 {
 }
 
 .values {
-  background: var(--navy);
+  background: var(--charcoal);
   color: var(--paper);
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -311,11 +319,11 @@ h3 {
 }
 
 .values .eyebrow {
-  color: var(--lime);
+  color: var(--sage);
 }
 
 .values-note {
-  color: #b9c2ce;
+  color: #d0e0da;
   font-size: 13px;
   line-height: 1.8;
   margin-top: 25px;
@@ -330,12 +338,12 @@ h3 {
 
 .value-list article > span {
   font-size: 11px;
-  color: var(--lime);
+  color: var(--sage);
   padding-top: 4px;
 }
 
 .value-list p {
-  color: #c0c8d4;
+  color: #dce7e2;
   margin-bottom: 10px;
   max-width: 100%;
 }
@@ -358,9 +366,9 @@ h3 {
 }
 
 .filters button.active {
-  background: var(--navy);
+  background: var(--charcoal);
   color: white;
-  border-color: var(--navy);
+  border-color: var(--charcoal);
 }
 
 .gallery-grid {
@@ -382,7 +390,7 @@ figure[hidden] {
   padding: 0;
   width: 100%;
   height: 300px;
-  background: #e4e5db;
+  background: #e6eeea;
   position: relative;
   overflow: hidden;
   cursor: zoom-in;
@@ -428,7 +436,7 @@ figcaption p {
 }
 
 .contact {
-  background: #e9ecdf;
+  background: #e2eee8;
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 70px;
@@ -437,7 +445,7 @@ figcaption p {
 .contact-info > p:not(.eyebrow):not(.owner) {
   font-size: 13px;
   line-height: 1.9;
-  color: #59634f;
+  color: #496360;
   margin-top: 24px;
 }
 
@@ -489,8 +497,8 @@ textarea {
   width: 100%;
   display: block;
   margin-top: 9px;
-  border: 1px solid #c7cdbe;
-  background: #f7f8f0;
+  border: 1px solid #9eb5ac;
+  background: #ffffff;
   border-radius: 2px;
   padding: 13px;
   font-size: 12px;
@@ -506,7 +514,7 @@ textarea {
 #form-status {
   font-size: 11px;
   line-height: 1.7;
-  color: #59634f;
+  color: #496360;
 }
 
 form .button {
@@ -528,7 +536,7 @@ footer {
 .footer-brand {
   font-size: 13px;
   letter-spacing: 1px;
-  color: var(--navy);
+  color: var(--charcoal);
   font-weight: 700;
 }
 
@@ -541,7 +549,7 @@ dialog {
 }
 
 dialog::backdrop {
-  background: #132033dd;
+  background: #173f43ee;
 }
 
 dialog img {
@@ -559,7 +567,7 @@ dialog p {
   display: block;
   margin: 0 0 10px auto;
   border: 0;
-  background: var(--navy);
+  background: var(--charcoal);
   color: white;
   padding: 10px;
   cursor: pointer;
@@ -731,7 +739,7 @@ dialog p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  background: #dde5cf;
+  background: #e2eee8;
 }
 
 .about-copy p {
@@ -830,40 +838,40 @@ dialog p {
 }
 
 .about .eyebrow {
-  color: var(--navy);
+  color: var(--charcoal);
 }
 
 .about-copy p {
-  color: #485342;
+  color: #365b55;
 }
 
 /* Featured services section */
 .services {
-  background: #eeefe5;
+  background: #f1eadd;
 }
 
 .services .eyebrow {
   display: inline-block;
   padding: 9px 14px;
   border-radius: 3px;
-  background: var(--navy);
-  color: var(--lime);
+  background: var(--charcoal);
+  color: var(--sage);
 }
 
 .services h2 {
-  color: var(--navy);
+  color: var(--charcoal);
   font-size: clamp(36px, 4.5vw, 64px);
   font-weight: 600;
   line-height: 1.08;
 }
 
 .services h2 em {
-  color: #52663a;
+  color: #bd4b35;
 }
 
 .services .section-top > p {
   font-size: 15px;
-  color: #4d5860;
+  color: #536b6a;
 }
 
 .services .service-grid {
@@ -875,10 +883,10 @@ dialog p {
   margin: 0;
   padding: 30px;
   background: var(--paper);
-  border: 1px solid #d3d9c8;
-  border-top: 4px solid #839661;
+  border: 1px solid #d6dfda;
+  border-top: 4px solid #c8ded4;
   border-radius: 4px;
-  box-shadow: 0 8px 24px rgb(32 46 72 / 5%);
+  box-shadow: 0 8px 24px rgb(23 63 67 / 5%);
 }
 
 .services .number {
@@ -888,15 +896,15 @@ dialog p {
   width: 48px;
   height: 48px;
   margin-bottom: 28px;
-  background: var(--lime);
-  color: var(--navy);
+  background: var(--sage);
+  color: var(--charcoal);
   border-radius: 50%;
   font-size: 14px;
   font-weight: 700;
 }
 
 .services h3 {
-  color: var(--navy);
+  color: var(--charcoal);
   font-size: 23px;
   font-weight: 600;
   line-height: 1.3;
@@ -929,7 +937,7 @@ dialog p {
 }
 
 
-/* Cream background visible between the main content sections. */
+/* Ivory background visible between the main content sections. */
 .services,
 .about,
 .values {
@@ -1122,7 +1130,7 @@ dialog img {
     border: 1px solid var(--line);
     border-radius: 3px;
     background: var(--paper);
-    color: var(--navy);
+    color: var(--charcoal);
     padding: 10px 12px;
     font-size: 13px;
     cursor: pointer;
@@ -1145,7 +1153,7 @@ dialog img {
     padding: 20px 5%;
     background: var(--paper);
     border-bottom: 1px solid var(--line);
-    box-shadow: 0 12px 20px rgb(32 46 72 / 8%);
+    box-shadow: 0 12px 20px rgb(23 63 67 / 8%);
   }
 
   #navigation.open {
@@ -1288,5 +1296,130 @@ dialog img {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* Coastal Florida palette: quiet surfaces and clear primary actions. */
+.button,
+.nav-cta {
+  background: var(--coral);
+  color: var(--white);
+  border-color: var(--coral);
+  font-weight: 700;
+}
+
+.button:hover,
+.nav-cta:hover {
+  background: var(--coral-hover);
+  border-color: var(--coral-hover);
+}
+
+.filters button.active {
+  background: var(--charcoal);
+  color: var(--white);
+  border-color: var(--charcoal);
+}
+
+.filters button:not(.active):hover {
+  background: var(--sea-glass);
+  border-color: #9eb5ac;
+}
+
+.services .eyebrow {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.services .service-grid article {
+  background: var(--white);
+  border-top-color: #90b4a5;
+}
+
+.services h2 em,
+h1 em {
+  color: #3d7566;
+}
+
+.values {
+  background: var(--charcoal);
+  color: var(--paper);
+}
+
+.values .eyebrow {
+  color: var(--peach);
+}
+
+.contact .eyebrow {
+  color: var(--charcoal);
+}
+
+.text-link:hover,
+.contact-info > a:hover {
+  color: var(--coral);
+}
+
+:focus-visible {
+  outline-color: var(--coral);
+}
+
+::selection {
+  background: var(--sage);
+  color: var(--charcoal);
+}
+
+/* Quiet Florida accents: original vector palms and coastal birds. */
+.coastal-birds {
+  display: block;
+  width: clamp(130px, 14vw, 180px);
+  height: auto;
+  margin: 0 0 22px;
+  opacity: .8;
+  pointer-events: none;
+}
+
+.about {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.about::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -30px;
+  bottom: -35px;
+  width: clamp(180px, 24vw, 330px);
+  height: 100%;
+  max-height: 430px;
+  background: url("assets/coastal-palm.svg") no-repeat right bottom / contain;
+  opacity: .12;
+  pointer-events: none;
+}
+
+.coastal-egret {
+  display: block;
+  width: 144px;
+  height: auto;
+  margin: 24px 0 4px;
+  opacity: .85;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .coastal-birds {
+    width: 130px;
+    margin-bottom: 18px;
+  }
+
+  .about::after {
+    right: -45px;
+    width: 210px;
+    height: 290px;
+    opacity: .09;
+  }
+
+  .coastal-egret {
+    width: 120px;
   }
 }
