@@ -1,0 +1,133 @@
+const menu = document.querySelector('.menu');
+const nav = document.querySelector('nav');
+
+menu.addEventListener('click', () => {
+  const open = menu.getAttribute('aria-expanded') !== 'true';
+
+  menu.setAttribute('aria-expanded', String(open));
+  nav.classList.toggle('open', open);
+});
+
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menu.setAttribute('aria-expanded', 'false');
+  });
+});
+
+document.querySelectorAll('[data-filter]').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter]').forEach(b => {
+      b.classList.toggle('active', b === button);
+      b.setAttribute('aria-pressed', String(b === button));
+    });
+
+    document.querySelectorAll('[data-category]').forEach(card => {
+      card.hidden =
+        button.dataset.filter !== 'all' &&
+        card.dataset.category !== button.dataset.filter;
+    });
+  });
+});
+
+const lightbox = document.querySelector('#lightbox');
+
+document.querySelectorAll('[data-image]').forEach(button => {
+  button.addEventListener('click', () => {
+    const img = lightbox.querySelector('img');
+
+    img.src = button.dataset.image;
+    img.alt = button.querySelector('img').alt;
+    lightbox.querySelector('p').textContent = button.dataset.title;
+    lightbox.showModal();
+  });
+});
+
+lightbox.querySelector('.close').addEventListener('click', () => {
+  lightbox.close();
+});
+
+lightbox.addEventListener('click', event => {
+  if (event.target === lightbox) {
+    const r = lightbox.getBoundingClientRect();
+
+    if (
+      event.clientX < r.left ||
+      event.clientX > r.right ||
+      event.clientY < r.top ||
+      event.clientY > r.bottom
+    ) {
+      lightbox.close();
+    }
+  }
+});
+
+document.querySelector('#year').textContent = new Date().getFullYear();
+
+
+// Keep the compact navigation usable with keyboards and rotating devices.
+function closeNavigation() {
+  nav.classList.remove('open');
+  menu.setAttribute('aria-expanded', 'false');
+}
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && nav.classList.contains('open')) {
+    closeNavigation();
+    menu.focus();
+  }
+});
+
+const compactNavigation = window.matchMedia('(max-width: 900px)');
+compactNavigation.addEventListener('change', closeNavigation);
+
+// Fade gallery pictures in once they enter the viewport and finish loading.
+function initializeGalleryFade() {
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (motionPreference.matches || !('IntersectionObserver' in window)) {
+    return;
+  }
+
+  const pictures = document.querySelectorAll('.gallery-grid .photo');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const picture = entry.target;
+        const image = picture.querySelector('img');
+        observer.unobserve(picture);
+
+        const reveal = () => {
+          picture.classList.add('is-visible');
+        };
+
+        if (!image || image.complete) {
+          reveal();
+        } else {
+          image.addEventListener('load', reveal, { once: true });
+          image.addEventListener('error', reveal, { once: true });
+        }
+      }
+    });
+  }, {
+    threshold: 0,
+    rootMargin: '0px 0px -80px 0px'
+  });
+
+  pictures.forEach(picture => {
+    picture.classList.add('gallery-fade');
+    observer.observe(picture);
+    picture.addEventListener('focus', () => {
+      picture.classList.add('is-visible');
+    });
+  });
+
+  motionPreference.addEventListener('change', event => {
+    if (event.matches) {
+      observer.disconnect();
+      pictures.forEach(picture => picture.classList.add('is-visible'));
+    }
+  });
+}
+
+initializeGalleryFade();
