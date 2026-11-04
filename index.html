@@ -13,14 +13,30 @@
 
   <body>
     <header>
-      <a class="brand" href="#home" aria-label="Restore and Roll home"
-        ><span class="brand-icon">R</span
-        ><span
-          >RESTORE <i>&</i> ROLL<small
-            >LLC · PAINTING & RESTORATION</small
-          ></span
-        ></a
-      ><button class="menu" aria-expanded="false" aria-controls="navigation">
+      <div class="header-paint-reveal" aria-hidden="true">
+        <div class="header-paint-curtain"></div>
+        <div class="header-paint-roller">
+          <svg viewBox="0 0 100 180" fill="none" focusable="false">
+            <defs>
+              <linearGradient id="roller-shading" x1="14" y1="0" x2="58" y2="0" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0b6fa8" />
+                <stop offset=".45" stop-color="#168dcc" />
+                <stop offset="1" stop-color="#092e53" />
+              </linearGradient>
+            </defs>
+            <path d="M54 22H70Q78 22 78 30V112Q78 120 70 120H58V145" stroke="#728a9c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            <rect x="12" y="8" width="48" height="106" rx="12" fill="url(#roller-shading)" />
+            <path d="M20 23V96" stroke="#72bfea" stroke-width="3" stroke-linecap="round" opacity=".6" />
+            <rect x="49" y="139" width="18" height="36" rx="7" fill="#092e53" />
+            <path d="M53 150H63M53 158H63" stroke="#79ad32" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </div>
+      </div>
+      <a class="brand" href="#home" aria-label="Restore and Roll home">
+        <span class="brand-logo-frame">
+          <img src="assets/restore-and-roll-logo.png" alt="Restore and Roll LLC" width="828" height="1792" fetchpriority="high" />
+        </span>
+      </a><button class="menu" aria-expanded="false" aria-controls="navigation">
         Menu ☰
       </button>
       <nav id="navigation">
@@ -52,10 +68,17 @@
         </div>
         <div class="hero-image">
           <img
-            src="assets/exterior.svg"
-            alt="Illustration of a navy and cream home with a welcoming front entrance"
-          /><span class="image-note">A NEW LOOK. A NEW BEGINNING.</span
-          ><span class="image-caption">Illustrative image</span>
+            src="assets/jobs/IMG_4231-edited.jpg"
+            alt="Finished staircase with dark refinished treads, white risers, and dark railings by Restore and Roll"
+            width="1086"
+            height="1448"
+            fetchpriority="high"
+          />
+          <span class="image-caption">FINISHED STAIRCASE</span>
+          <div class="image-note">
+            <span class="image-note-brand">RESTORE &amp; ROLL LLC</span>
+            <strong>Restoring homes.<br />Rolling on quality.</strong>
+          </div>
         </div>
         <div class="hero-bottom">
           <span>RESTORE THE SPACE. ROLL ON THE POSSIBILITIES.</span
@@ -100,448 +123,369 @@
       <section class="section about" id="about" aria-labelledby="about-heading">
         <div>
           <p class="eyebrow">ABOUT US</p>
-          <h2 id="about-heading">The people behind<br />the fresh start.</h2>
+          <h2 id="about-heading">Experience, dedication,<br />and a family connection.</h2>
+          <p class="about-intro">Meet the people behind Restore and Roll.</p>
         </div>
-        <div class="about-copy">
-          <!-- Replace the paragraphs below with your company's story before launch. -->
-          <p class="about-placeholder">
-            [This will be replaced with info about your company and its
-            mission.]
-          </p>
-          <p class="about-placeholder">
-            [This will be replaced with your company's story before launch.]
-          </p>
-          <a class="text-link" href="#contact"
-            >Let’s get to know your project</a
-          >
+        <div class="about-copy team-bios">
+          <article class="team-bio" aria-labelledby="walt-heading">
+            <p class="team-role">OWNER</p>
+            <h3 id="walt-heading">Walt Howard</h3>
+            <p>
+              Walt brings more than 30 years of experience to Restore and Roll,
+              including award-winning rehabilitation work at the Hershey hotel
+              in Pennsylvania. His experience spans multiple aspects of a
+              project, with a focus on quality workmanship, careful coordination,
+              and staying within budget. He has also trained and mentored
+              apprentices entering the trade, sharing the practical skills and
+              pride in craftsmanship he has developed throughout his career.
+            </p>
+            <p>
+              Before starting his own business, Walt served as a regional manager
+              for a million-dollar company, overseeing multiple offices across
+              several states. He brings that leadership experience to Restore
+              and Roll, combining hands-on expertise with a personal commitment
+              to every project.
+            </p>
+          </article>
+          <article class="team-bio" aria-labelledby="makye-heading">
+            <p class="team-role">ADMINISTRATOR</p>
+            <h3 id="makye-heading">Makye Detwiler</h3>
+            <p>
+              Born and raised in Harrisburg, Pennsylvania, Makye manages the
+              administrative side of Restore and Roll while working full time
+              for Southwest Airlines. As the grandson of Walt and Nancy Howard,
+              he brings a personal connection to the business and a commitment
+              to supporting its day-to-day operations.
+            </p>
+            <p>
+              Outside of work, Makye enjoys fishing, hiking, traveling, and
+              spending time with his cat, Peanut.
+            </p>
+          </article>
+          <a class="text-link" href="#contact">Let’s get to know your project</a>
         </div>
       </section>
-      <section class="values section" id="values">
+      <section class="values section" id="values" aria-labelledby="values-heading">
         <div>
-          <p class="eyebrow">OUR VALUES</p>
-          <h2>Good work starts<br />with good principles.</h2>
-          <p class="values-note">Our approach to caring for your space.</p>
+          <p class="eyebrow">OUR CORE VALUES</p>
+          <h2 id="values-heading">The core values<br />behind our company.</h2>
+          <p class="values-note">
+            <strong>Our promise is simple: Lead with integrity, work with pride,
+            treat people with respect, and leave every property better than we
+            found it.</strong>
+          </p>
+          <p class="values-note">
+            Because to us, it's about more than mitigation and painting. It's
+            about people, trust, and building relationships that last.
+          </p>
         </div>
         <div class="value-list">
           <article>
             <div>
-              <h3>Care in the details</h3>
+              <h3>People before profits</h3>
               <p>
-                Thoughtful preparation and attention to the little things that
-                make a finish feel complete.
+                Treat people with respect and build relationships rooted in
+                trust. People come first in the work we do.
               </p>
             </div>
           </article>
           <article>
             <div>
-              <h3>Clear communication</h3>
+              <h3>Integrity without compromise</h3>
               <p>
-                Straightforward conversations about your ideas, the scope, and
-                the next steps.
+                Lead with integrity, take responsibility, and stand behind
+                our word. No excuses or putting profits ahead of people.
               </p>
             </div>
           </article>
           <article>
             <div>
-              <h3>Respect for your space</h3>
+              <h3>Quality without shortcuts</h3>
               <p>
-                Your home or business matters. Treating it with care is part of
-                the work.
+                Work with pride, commit to excellence, and leave every property
+                better than we found it. We don't believe in cutting corners.
               </p>
             </div>
           </article>
         </div>
       </section>
-      <section class="section gallery" id="gallery">
+      <section class="section gallery" id="gallery" aria-labelledby="gallery-heading">
         <div class="section-top">
           <div>
-            <p class="eyebrow">THE POSSIBILITIES</p>
-            <h2>Picture your next chapter.</h2>
+            <p class="eyebrow">OUR WORK</p>
+            <h2 id="gallery-heading">Real spaces.<br />See the transformation.</h2>
           </div>
           <p>
-            Gallery preview · Illustrative placeholders.<br />Real project
-            photos coming soon.
+            Restore and Roll job photos, from preparation to painted finishes.
+            Before, after, and progress labels identify the stage shown;
+            some rooms still have other finishing work underway.
           </p>
         </div>
-        <div class="filters" role="group" aria-label="Filter gallery">
-          <button class="active" data-filter="all" aria-pressed="true">
-            All spaces</button
-          ><button data-filter="exterior" aria-pressed="false">Exteriors</button
-          ><button data-filter="interior" aria-pressed="false">Interiors</button
-          ><button data-filter="wallpaper" aria-pressed="false">
-            Wallpaper
-          </button>
+        <div class="filters" role="group" aria-label="Filter gallery by type of work">
+          <button class="active" data-filter="all" aria-pressed="true">All projects</button>
+          <button data-filter="stairs" aria-pressed="false">Stairs &amp; railings</button>
+          <button data-filter="drywall" aria-pressed="false">Drywall &amp; prep</button>
+          <button data-filter="interior" aria-pressed="false">Interior painting</button>
         </div>
-        <div class="gallery-grid" id="gallery-photos">
-          <figure data-category="exterior">
+        <div class="gallery-projects" id="gallery-photos">
+          <div class="gallery-project" id="staircase-project" role="group" aria-labelledby="staircase-project-heading">
+            <div class="gallery-project-heading">
+              <h3 id="staircase-project-heading">Staircase refinishing</h3>
+              <p>The stair and railing project: before refinishing, during the work, and after the finish.</p>
+            </div>
+            <div class="gallery-grid">
+              <figure data-category="stairs">
             <button
               class="photo"
-              data-image="assets/exterior.svg"
-              data-title="Exterior palette · illustration"
-              aria-label="Enlarge exterior illustration"
+              data-image="assets/jobs/IMG_4229-edited.jpg"
+              data-title="Before: Stair treads before refinishing"
+              aria-label="Enlarge before: stair treads before refinishing"
             >
-              <img
-                src="assets/exterior.svg"
-                alt="Illustrated home with navy siding and cream trim"
-                loading="lazy"
-              />
+              <img src="assets/jobs/IMG_4229-edited.jpg" alt="Worn stair treads and landing before refinishing." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>A welcoming exterior</h3>
-              <p>EXTERIOR</p>
+              <span class="job-stage job-stage--before">Before</span>
+              <h4>Stair treads before refinishing</h4>
+              <p>STAIRS & RAILINGS</p>
             </figcaption>
           </figure>
-          <figure data-category="interior">
+              <figure data-category="stairs">
             <button
               class="photo"
-              data-image="assets/interior.svg"
-              data-title="Interior refresh · illustration"
-              aria-label="Enlarge interior illustration"
+              data-image="assets/jobs/IMG_4231-edited.jpg"
+              data-title="After: Refinished stairs and landing"
+              aria-label="Enlarge after: refinished stairs and landing"
             >
-              <img
-                src="assets/interior.svg"
-                alt="Illustrated warm neutral living room with green accent wall"
-                loading="lazy"
-              />
+              <img src="assets/jobs/IMG_4231-edited.jpg" alt="Dark stair treads with white risers after the stair finish." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>A room to unwind</h3>
-              <p>INTERIOR</p>
+              <span class="job-stage job-stage--after">After</span>
+              <h4>Refinished stairs and landing</h4>
+              <p>STAIRS & RAILINGS</p>
             </figcaption>
           </figure>
-          <figure data-category="wallpaper">
+              <figure data-category="stairs">
             <button
               class="photo"
-              data-image="assets/wallpaper.svg"
-              data-title="Wallpaper detail · illustration"
-              aria-label="Enlarge wallpaper illustration"
+              data-image="assets/jobs/IMG_4230-edited.jpg"
+              data-title="After: Stair finish close-up"
+              aria-label="Enlarge after: stair finish close-up"
             >
-              <img
-                src="assets/wallpaper.svg"
-                alt="Illustrated botanical wallpaper and console table"
-                loading="lazy"
-              />
+              <img src="assets/jobs/IMG_4230-edited.jpg" alt="Close view of the dark stair finish and white risers." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>A little more character</h3>
-              <!-- insert job of the wallpaper installation -->
-              <p>WALLPAPER</p>
+              <span class="job-stage job-stage--after">After</span>
+              <h4>Stair finish close-up</h4>
+              <p>STAIRS & RAILINGS</p>
             </figcaption>
           </figure>
-          <figure data-category="interior">
+              <figure data-category="stairs">
             <button
               class="photo"
-              data-image="assets/sample-coastal-room.svg"
-              data-title="Coastal blue living room · sample illustration"
-              aria-label="Enlarge coastal blue living room sample"
+              data-image="assets/jobs/IMG_4232-edited.jpg"
+              data-title="After: Railing and newel detail"
+              aria-label="Enlarge after: railing and newel detail"
             >
-              <img
-                src="assets/sample-coastal-room.svg"
-                alt="Sample illustration of a living room with soft blue walls"
-                loading="lazy"
-                decoding="async"
-                width="700"
-                height="700"
-              />
-
+              <img src="assets/jobs/IMG_4232-edited.jpg" alt="Detail of the dark railing and newel finish." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>Coastal blue living room</h3>
-              <p>INTERIOR · SAMPLE ILLUSTRATION</p>
+              <span class="job-stage job-stage--after">After</span>
+              <h4>Railing and newel detail</h4>
+              <p>STAIRS & RAILINGS</p>
             </figcaption>
           </figure>
-          <figure data-category="exterior">
+              <figure data-category="stairs">
             <button
               class="photo"
-              data-image="assets/sample-sage-home.svg"
-              data-title="A fresh sage exterior · sample illustration"
-              aria-label="Enlarge a fresh sage exterior sample"
+              data-image="assets/jobs/IMG_4233-edited.jpg"
+              data-title="During: Railing finishing in progress"
+              aria-label="Enlarge during: railing finishing in progress"
             >
-              <img
-                src="assets/sample-sage-home.svg"
-                alt="Sample illustration of a home with sage green siding"
-                loading="lazy"
-                decoding="async"
-                width="700"
-                height="700"
-              />
-
+              <img src="assets/jobs/IMG_4233-edited.jpg" alt="A painter working on the stair railing." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>A fresh sage exterior</h3>
-              <p>EXTERIOR · SAMPLE ILLUSTRATION</p>
+              <span class="job-stage job-stage--during">During</span>
+              <h4>Railing finishing in progress</h4>
+              <p>STAIRS & RAILINGS</p>
             </figcaption>
           </figure>
-          <figure data-category="wallpaper">
+              <figure data-category="stairs">
             <button
               class="photo"
-              data-image="assets/sample-blue-wallpaper.svg"
-              data-title="Botanical blues · sample illustration"
-              aria-label="Enlarge botanical blues sample"
+              data-image="assets/jobs/IMG_4234-edited.jpg"
+              data-title="During: Staircase project overview"
+              aria-label="Enlarge during: staircase project overview"
             >
-              <img
-                src="assets/sample-blue-wallpaper.svg"
-                alt="Sample illustration of blue botanical wallpaper above a console"
-                loading="lazy"
-                decoding="async"
-                width="700"
-                height="700"
-              />
-
+              <img src="assets/jobs/IMG_4234-edited.jpg" alt="Wide view of the staircase with masking still in place." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>Botanical blues</h3>
-              <p>WALLPAPER · SAMPLE ILLUSTRATION</p>
+              <span class="job-stage job-stage--during">During</span>
+              <h4>Staircase project overview</h4>
+              <p>STAIRS & RAILINGS</p>
             </figcaption>
           </figure>
-          <figure data-category="interior">
+            </div>
+          </div>
+          <div class="gallery-project" id="interior-project" role="group" aria-labelledby="interior-project-heading">
+            <div class="gallery-project-heading">
+              <h3 id="interior-project-heading">Interior preparation &amp; painting</h3>
+              <p>Drywall preparation and painted interior views. Photos show several areas of the work; other finishing trades remain in progress.</p>
+            </div>
+            <div class="gallery-grid">
+              <figure data-category="drywall">
             <button
               class="photo"
-              data-image="assets/sample-clay-room.svg"
-              data-title="Warm clay tones · sample illustration"
-              aria-label="Enlarge warm clay tones sample"
+              data-image="assets/jobs/IMG_4235-edited.jpg"
+              data-title="Before painting: Drywall preparation — ceiling"
+              aria-label="Enlarge before painting: drywall preparation — ceiling"
             >
-              <img
-                src="assets/sample-clay-room.svg"
-                alt="Sample illustration of a living room with warm terracotta walls"
-                loading="lazy"
-                decoding="async"
-                width="700"
-                height="700"
-              />
-
+              <img src="assets/jobs/IMG_4235-edited.jpg" alt="Ceiling and walls with visible taped drywall seams before painting." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>Warm clay tones</h3>
-              <p>INTERIOR · SAMPLE ILLUSTRATION</p>
+              <span class="job-stage job-stage--before">Before painting</span>
+              <h4>Drywall preparation — ceiling</h4>
+              <p>DRYWALL & PREP</p>
             </figcaption>
           </figure>
-          <figure data-category="exterior">
+              <figure data-category="drywall">
             <button
               class="photo"
-              data-image="assets/sample-slate-home.svg"
-              data-title="A classic slate finish · sample illustration"
-              aria-label="Enlarge a classic slate finish sample"
+              data-image="assets/jobs/IMG_4236-edited.jpg"
+              data-title="Before painting: Drywall preparation — living area"
+              aria-label="Enlarge before painting: drywall preparation — living area"
             >
-              <img
-                src="assets/sample-slate-home.svg"
-                alt="Sample illustration of a home with slate gray siding"
-                loading="lazy"
-                decoding="async"
-                width="700"
-                height="700"
-              />
-
+              <img src="assets/jobs/IMG_4236-edited.jpg" alt="Open living area during drywall preparation, before painting." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>A classic slate finish</h3>
-              <p>EXTERIOR · SAMPLE ILLUSTRATION</p>
+              <span class="job-stage job-stage--before">Before painting</span>
+              <h4>Drywall preparation — living area</h4>
+              <p>DRYWALL & PREP</p>
             </figcaption>
           </figure>
-          <figure data-category="wallpaper">
+              <figure data-category="drywall">
             <button
               class="photo"
-              data-image="assets/sample-rose-wallpaper.svg"
-              data-title="Soft rose details · sample illustration"
-              aria-label="Enlarge soft rose details sample"
+              data-image="assets/jobs/IMG_4237-edited.jpg"
+              data-title="Before painting: Drywall preparation — arched window"
+              aria-label="Enlarge before painting: drywall preparation — arched window"
             >
-              <img
-                src="assets/sample-rose-wallpaper.svg"
-                alt="Sample illustration of muted rose botanical wallpaper"
-                loading="lazy"
-                decoding="async"
-                width="700"
-                height="700"
-              />
-
+              <img src="assets/jobs/IMG_4237-edited.jpg" alt="Drywall seams around the arched entry window before painting." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>Soft rose details</h3>
-              <p>WALLPAPER · SAMPLE ILLUSTRATION</p>
+              <span class="job-stage job-stage--before">Before painting</span>
+              <h4>Drywall preparation — arched window</h4>
+              <p>DRYWALL & PREP</p>
             </figcaption>
           </figure>
-          <figure data-category="exterior">
+              <figure data-category="drywall">
             <button
               class="photo"
-              data-image="assets/sample-cream-home.svg"
-              data-title="Warm cream exterior · sample illustration"
-              aria-label="Enlarge warm cream exterior sample"
+              data-image="assets/jobs/IMG_4238-edited.jpg"
+              data-title="Before painting: Entry preparation"
+              aria-label="Enlarge before painting: entry preparation"
             >
-              <img
-                src="assets/sample-cream-home.svg"
-                alt="Sample illustration: warm cream exterior"
-                loading="lazy"
-                decoding="async"
-              />
-
+              <img src="assets/jobs/IMG_4238-edited.jpg" alt="Entry walls during drywall preparation, before painting." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>Warm cream exterior</h3>
-              <p>EXTERIOR · SAMPLE ILLUSTRATION</p>
+              <span class="job-stage job-stage--before">Before painting</span>
+              <h4>Entry preparation</h4>
+              <p>DRYWALL & PREP</p>
             </figcaption>
           </figure>
-          <figure data-category="interior">
+              <figure data-category="interior">
             <button
               class="photo"
-              data-image="assets/sample-lavender-room.svg"
-              data-title="A lavender retreat · sample illustration"
-              aria-label="Enlarge a lavender retreat sample"
+              data-image="assets/jobs/IMG_4239-edited.jpg"
+              data-title="After painting: Painted interior — corner view"
+              aria-label="Enlarge after painting: painted interior — corner view"
             >
-              <img
-                src="assets/sample-lavender-room.svg"
-                alt="Sample illustration: a lavender retreat"
-                loading="lazy"
-                decoding="async"
-              />
-
+              <img src="assets/jobs/IMG_4239-edited.jpg" alt="Painted walls and ceiling; protective coverings and other finishing work remain." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>A lavender retreat</h3>
-              <p>INTERIOR · SAMPLE ILLUSTRATION</p>
+              <span class="job-stage job-stage--after">After painting</span>
+              <h4>Painted interior — corner view</h4>
+              <p>INTERIOR PAINTING</p>
             </figcaption>
           </figure>
-          <figure data-category="wallpaper">
+              <figure data-category="interior">
             <button
               class="photo"
-              data-image="assets/sample-ochre-wallpaper.svg"
-              data-title="Golden botanical detail · sample illustration"
-              aria-label="Enlarge golden botanical detail sample"
+              data-image="assets/jobs/IMG_4240-edited.jpg"
+              data-title="After painting: Painted interior — wide view"
+              aria-label="Enlarge after painting: painted interior — wide view"
             >
-              <img
-                src="assets/sample-ochre-wallpaper.svg"
-                alt="Sample illustration: golden botanical detail"
-                loading="lazy"
-                decoding="async"
-              />
-
+              <img src="assets/jobs/IMG_4240-edited.jpg" alt="Wide view of painted walls with the floor still protected." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>Golden botanical detail</h3>
-              <p>WALLPAPER · SAMPLE ILLUSTRATION</p>
+              <span class="job-stage job-stage--after">After painting</span>
+              <h4>Painted interior — wide view</h4>
+              <p>INTERIOR PAINTING</p>
             </figcaption>
           </figure>
-          <figure data-category="exterior">
+              <figure data-category="interior">
             <button
               class="photo"
-              data-image="assets/sample-teal-home.svg"
-              data-title="Deep teal curb appeal · sample illustration"
-              aria-label="Enlarge deep teal curb appeal sample"
+              data-image="assets/jobs/IMG_4241-edited.jpg"
+              data-title="After painting: Doorway and wall finish"
+              aria-label="Enlarge after painting: doorway and wall finish"
             >
-              <img
-                src="assets/sample-teal-home.svg"
-                alt="Sample illustration: deep teal curb appeal"
-                loading="lazy"
-                decoding="async"
-              />
-
+              <img src="assets/jobs/IMG_4241-edited.jpg" alt="Painted doorway and walls with remaining construction details visible." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>Deep teal curb appeal</h3>
-              <p>EXTERIOR · SAMPLE ILLUSTRATION</p>
+              <span class="job-stage job-stage--after">After painting</span>
+              <h4>Doorway and wall finish</h4>
+              <p>INTERIOR PAINTING</p>
             </figcaption>
           </figure>
-          <figure data-category="interior">
+              <figure data-category="interior">
             <button
               class="photo"
-              data-image="assets/sample-sand-room.svg"
-              data-title="Soft sand living room · sample illustration"
-              aria-label="Enlarge soft sand living room sample"
+              data-image="assets/jobs/IMG_4242-edited.jpg"
+              data-title="After painting: Interior wall finish"
+              aria-label="Enlarge after painting: interior wall finish"
             >
-              <img
-                src="assets/sample-sand-room.svg"
-                alt="Sample illustration: soft sand living room"
-                loading="lazy"
-                decoding="async"
-              />
-
+              <img src="assets/jobs/IMG_4242-edited.jpg" alt="Painted walls beside a window; electrical and trim work remain unfinished." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>Soft sand living room</h3>
-              <p>INTERIOR · SAMPLE ILLUSTRATION</p>
+              <span class="job-stage job-stage--after">After painting</span>
+              <h4>Interior wall finish</h4>
+              <p>INTERIOR PAINTING</p>
             </figcaption>
           </figure>
-          <figure data-category="wallpaper">
+              <figure data-category="interior">
             <button
               class="photo"
-              data-image="assets/sample-forest-wallpaper.svg"
-              data-title="Forest green pattern · sample illustration"
-              aria-label="Enlarge forest green pattern sample"
+              data-image="assets/jobs/IMG_4243-edited.jpg"
+              data-title="After painting: Painted wall detail"
+              aria-label="Enlarge after painting: painted wall detail"
             >
-              <img
-                src="assets/sample-forest-wallpaper.svg"
-                alt="Sample illustration: forest green pattern"
-                loading="lazy"
-                decoding="async"
-              />
-
+              <img src="assets/jobs/IMG_4243-edited.jpg" alt="Detail of painted walls and corner with unfinished trim and outlet." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>Forest green pattern</h3>
-              <p>WALLPAPER · SAMPLE ILLUSTRATION</p>
+              <span class="job-stage job-stage--after">After painting</span>
+              <h4>Painted wall detail</h4>
+              <p>INTERIOR PAINTING</p>
             </figcaption>
           </figure>
-          <figure data-category="exterior">
+              <figure data-category="interior">
             <button
               class="photo"
-              data-image="assets/sample-clay-home.svg"
-              data-title="Earthy clay exterior · sample illustration"
-              aria-label="Enlarge earthy clay exterior sample"
+              data-image="assets/jobs/IMG_4244-edited.jpg"
+              data-title="After painting: Bay-window room finish"
+              aria-label="Enlarge after painting: bay-window room finish"
             >
-              <img
-                src="assets/sample-clay-home.svg"
-                alt="Sample illustration: earthy clay exterior"
-                loading="lazy"
-                decoding="async"
-              />
-
+              <img src="assets/jobs/IMG_4244-edited.jpg" alt="Painted room around bay windows with other finishing work still in progress." loading="lazy" decoding="async" />
             </button>
             <figcaption>
-              <h3>Earthy clay exterior</h3>
-              <p>EXTERIOR · SAMPLE ILLUSTRATION</p>
+              <span class="job-stage job-stage--after">After painting</span>
+              <h4>Bay-window room finish</h4>
+              <p>INTERIOR PAINTING</p>
             </figcaption>
           </figure>
-          <figure data-category="interior">
-            <button
-              class="photo"
-              data-image="assets/sample-charcoal-room.svg"
-              data-title="A charcoal accent wall · sample illustration"
-              aria-label="Enlarge a charcoal accent wall sample"
-            >
-              <img
-                src="assets/sample-charcoal-room.svg"
-                alt="Sample illustration: a charcoal accent wall"
-                loading="lazy"
-                decoding="async"
-              />
-
-            </button>
-            <figcaption>
-              <h3>A charcoal accent wall</h3>
-              <p>INTERIOR · SAMPLE ILLUSTRATION</p>
-            </figcaption>
-          </figure>
-          <figure data-category="wallpaper">
-            <button
-              class="photo"
-              data-image="assets/sample-lilac-wallpaper.svg"
-              data-title="Muted lilac wallpaper · sample illustration"
-              aria-label="Enlarge muted lilac wallpaper sample"
-            >
-              <img
-                src="assets/sample-lilac-wallpaper.svg"
-                alt="Sample illustration: muted lilac wallpaper"
-                loading="lazy"
-                decoding="async"
-              />
-
-            </button>
-            <figcaption>
-              <h3>Muted lilac wallpaper</h3>
-              <p>WALLPAPER · SAMPLE ILLUSTRATION</p>
-            </figcaption>
-          </figure>
+            </div>
+          </div>
         </div>
-              <div class="gallery-mobile-controls">
+        <div class="gallery-mobile-controls">
           <p id="gallery-count" class="form-note" aria-live="polite"></p>
           <button
             id="gallery-toggle"
@@ -669,11 +613,12 @@
     <footer>
       <a class="footer-brand" href="#home">RESTORE & ROLL LLC</a
       ><span>Mitigation · Painting · Wallpaper</span
+      ><a href="license-and-insurance.html">License &amp; Insurance</a
       ><span>© <span id="year"></span> Restore and Roll LLC</span>
     </footer>
     <dialog id="lightbox">
       <button class="close" aria-label="Close image">✕</button
-      ><img src="assets/exterior.svg" alt="" />
+      ><img src="assets/jobs/IMG_4234-edited.jpg" alt="" />
       <p></p>
     </dialog>
     <script src="script.js"></script>

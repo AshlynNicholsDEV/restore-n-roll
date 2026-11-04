@@ -133,7 +133,7 @@ initializeGalleryFade();
 const mobileGallery = window.matchMedia('(max-width: 700px)');
 const galleryToggle = document.querySelector('#gallery-toggle');
 const galleryCount = document.querySelector('#gallery-count');
-const galleryCards = Array.from(document.querySelectorAll('#gallery-photos > figure'));
+const galleryCards = Array.from(document.querySelectorAll('#gallery-photos figure'));
 let galleryExpanded = false;
 
 function updateGalleryPreview() {
@@ -146,6 +146,10 @@ function updateGalleryPreview() {
   galleryCards.forEach(card => {
     const position = matchingCards.indexOf(card);
     card.hidden = position < 0 || position >= limit;
+  });
+
+  document.querySelectorAll('.gallery-project').forEach(project => {
+    project.hidden = !Array.from(project.querySelectorAll('figure')).some(card => !card.hidden);
   });
 
   galleryToggle.hidden = !mobileGallery.matches || matchingCards.length <= 2;
@@ -174,3 +178,29 @@ mobileGallery.addEventListener('change', () => {
 });
 
 updateGalleryPreview();
+
+// Reveal the header with a lightweight decorative paint roller on page load.
+function initializeHeaderPaint() {
+  const header = document.querySelector('header');
+  const overlay = header.querySelector('.header-paint-reveal');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (!overlay || reducedMotion.matches) return;
+
+  let cleanupTimer;
+  const finish = () => {
+    header.classList.remove('is-painting');
+    window.clearTimeout(cleanupTimer);
+  };
+
+  header.classList.add('is-painting');
+  overlay.querySelector('.header-paint-curtain').addEventListener('animationend', finish, { once: true });
+  header.addEventListener('focusin', finish, { once: true });
+  header.addEventListener('pointerdown', finish, { once: true });
+  reducedMotion.addEventListener('change', event => {
+    if (event.matches) finish();
+  });
+  cleanupTimer = window.setTimeout(finish, 3000);
+}
+
+initializeHeaderPaint();
